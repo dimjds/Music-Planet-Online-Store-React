@@ -1,82 +1,106 @@
-# Установка
+# 🎸 Music Planet Online Store
 
-# 1. Для установки этого приложения потребуется клонировать используя:
+Welcome to the **Music Planet Online Store** repository! This is a full-stack application developed using React for the frontend and PHP with MySQL for the backend.
 
-```
-git clone 'https' or 'ssh'
-```
+## 📋 Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Database Setup](#database-setup)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-# 2. Установить все зависимости используя
+## 🚀 Features
+- Browse and search for musical instruments
+- Add items to cart
+- Place orders
+- Contact form for inquiries
+- User authentication
 
-```
-npm install
-```
+## 🛠️ Installation
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/dimjds/Music-Planet-Online-Store-React.git
+    ```
+2. **Navigate to the project directory:**
+    ```bash
+    cd Music-Planet-Online-Store-React
+    ```
+3. **Install frontend dependencies:**
+    ```bash
+    cd frontend
+    npm install
+    ```
+4. **Install backend dependencies:**
+    ```bash
+      install PHP
+      install Apache or any other alternative
+      install MySQL
+    ```
 
-# 3. Локальный сервер с PHP и установленным MySQL
+## ▶️ Usage
+1. **Start the frontend development server:**
+    ```bash
+    cd frontend
+    npm run dev
+    ```
+2. **Start the backend server (ensure PHP and MySQL are running)
 
-Локальный сервер потребуется для работы PHP скриптов и работы с данными в MySQL. 
-P.S В качестве быстрой установки можно использовать XAMPP или OpenServer
+## 🗄️ Database Setup
+1. **Create the necessary databases and tables:**
 
-# 4. Настройте БД под нужды приложения
+    ```sql
+    CREATE TABLE `cart` (
+      `id` int(11) NOT NULL,
+      `title` varchar(255) NOT NULL,
+      `price` decimal(10,2) NOT NULL,
+      `imageUrl` varchar(255) NOT NULL,
+      `username` varchar(255) NOT NULL
+    );
 
-Потребуется создать необходимую для работы базу данных вместе с таблицами. 
+    CREATE TABLE `guitars` (
+      `id` int(11) NOT NULL,
+      `title` varchar(255) NOT NULL,
+      `price` int(11) DEFAULT NULL,
+      `imageUrl` varchar(255) NOT NULL
+    );
 
+    CREATE TABLE `orders` (
+      `OrderID` int(11) NOT NULL,
+      `ProductName` varchar(255) DEFAULT NULL,
+      `FirstName` varchar(50) DEFAULT NULL,
+      `LastName` varchar(50) DEFAULT NULL,
+      `Address` varchar(255) DEFAULT NULL,
+      `Email` varchar(100) DEFAULT NULL,
+      `PhoneNumber` varchar(15) DEFAULT NULL,
+      `OrderStatus` varchar(50) DEFAULT NULL
+    );
 
-Таблица Cart
-```
-CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `imageUrl` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL
-)
-```
+    CREATE TABLE `contacts` (
+      `id` int(11) NOT NULL,
+      `name` varchar(255) NOT NULL,
+      `last_name` varchar(255) NOT NULL,
+      `email` varchar(255) NOT NULL,
+      `message` text NOT NULL
+    );
 
-Таблица Guitars (Стоит назвать store_items)
-```
-CREATE TABLE `guitars` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `price` int(11) DEFAULT NULL,
-  `imageUrl` varchar(255) NOT NULL
-)
-```
+    CREATE TABLE `requests` (
+      `id` int(11) NOT NULL,
+      `ip_address` varchar(45) NOT NULL,
+      `username` varchar(255) NOT NULL,
+      `password` varchar(255) NOT NULL,
+      `email` varchar(255) NOT NULL,
+      `request_time` timestamp NOT NULL DEFAULT current_timestamp()
+    );
+    ```
 
-Таблица Orders
-```
-CREATE TABLE `orders` (
-  `OrderID` int(11) NOT NULL,
-  `ProductName` varchar(255) DEFAULT NULL,
-  `FirstName` varchar(50) DEFAULT NULL,
-  `LastName` varchar(50) DEFAULT NULL,
-  `Address` varchar(255) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
-  `PhoneNumber` varchar(15) DEFAULT NULL,
-  `OrderStatus` varchar(50) DEFAULT NULL
-)
-```
+## 🤝 Contributing
+Contributions are welcome! Please fork this repository and submit a pull request for any changes.
 
-Таблица Contacts
-```
-CREATE TABLE `contacts` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `message` text NOT NULL
-)
-```
+## 📧 Contact
+For any inquiries, please contact us at [dumitru.railean.work@gmail.com](mailto:dumitru.railean.work@gmail.com).
 
-Таблица Requests
-```
-CREATE TABLE `requests` (
-  `id` int(11) NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `request_time` timestamp NOT NULL DEFAULT current_timestamp()
-)
-```
+---
 
+Made with ❤️ by [dimjds](https://github.com/dimjds)
