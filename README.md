@@ -34,15 +34,14 @@ Welcome to the **Music Planet Online Store** repository! This is a full-stack ap
     ```
 4. **Install backend dependencies:**
     ```bash
-      install PHP
-      install Apache or any other alternative
-      install MySQL
+    You'll need to install PHP, MySQL and Apache or any of its alternatives separately.
     ```
 
 ## ▶️ Usage
 1. **Start the frontend development server:**
     ```bash
-    You'll need to install PHP, MySQL and Apache or any of its alternatives separately.
+    cd frontend
+    npm run dev
     ```
 2. **Start the backend server (ensure PHP and MySQL are running)
 
