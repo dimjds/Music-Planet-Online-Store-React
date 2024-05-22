@@ -42,8 +42,7 @@ Welcome to the **Music Planet Online Store** repository! This is a full-stack ap
 ## ▶️ Usage
 1. **Start the frontend development server:**
     ```bash
-    cd frontend
-    npm run dev
+    You'll need to install PHP, MySQL and Apache or any of its alternatives separately.
     ```
 2. **Start the backend server (ensure PHP and MySQL are running)
 
