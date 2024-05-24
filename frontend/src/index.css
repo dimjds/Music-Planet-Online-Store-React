@@ -1,0 +1,688 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'AmpleSoft Pro';
+    src:
+        url('public/AmpleSoftPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmpleSoft Pro';
+    src:
+        url('public/AmpleSoftPro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmpleSoft Pro';
+    src:
+        url('public/AmpleSoftPro-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmpleSoft Pro';
+    src:
+        url('public/AmpleSoftPro-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmpleSoft Pro';
+    src:
+        url('public/AmpleSoftPro-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmpleSoft Pro';
+    src:
+        url("public/AmpleSoftPro-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes Opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    font-family: "AmpleSoft Pro";
+}
+
+.overlay {
+    animation: Opacity 0.7s ;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.drawer {
+    animation: slideIn 0.5s ease-in;
+    background-image: url("public/img/backround-drawer.png");
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 540px;
+    height: 100%;
+    right: 0;
+    box-shadow: 0px 0px 10px 0px #d5d5d5;
+    padding: 30px;
+
+    .items {
+        flex: 1;
+        overflow: auto;
+        overflow-x: clip;
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.drawer.closed {
+    animation-direction: reverse;
+}
+
+.emptyCard {
+    margin-top: 35%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 1s;
+    border: 2px solid #f1f1f1;
+
+    h2 {
+        color: white;
+        background: #1a5bff;
+        box-shadow: 0px 0px 20px 0px #f3f3f3;
+        border-radius: 20px;
+        padding: 20px;
+        transition: 1s;
+        animation: button-animation 3s infinite;
+    }
+
+    h2:hover {
+        border-radius: 20px;
+        transition: 1s;
+        transform: scale(1.03);
+    }
+}
+
+.emptyCard:hover {
+    box-shadow: 0px 10px 20px 0px #ececec;
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
+.wrapper {
+    background: #ffffff;
+    box-shadow: 0px 0px 20px 0px #f3f3f3;
+    border-radius: 20px;
+    max-width: 1660px;
+    margin: auto;
+}
+
+
+header {
+    border: 5px solid #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    animation-iteration-count: infinite;
+}
+
+footer {
+    margin-top: 10%;
+    border: 5px solid #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cart-animation {
+    from {
+        box-shadow: 0px 0px 35px 0px #f1f1f1;
+    }
+
+    50% {
+        box-shadow: 0px 0px 35px 0px rgba(161, 54, 245, 0.56);
+    }
+
+    to {
+        box-shadow: 0px 0px 35px 0px #f1f1f1;
+    }
+}
+
+@keyframes button-animation {
+    from {
+        box-shadow: 0px 0px 0px 0px #ffffff;
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 0px rgb(149, 151, 255);
+    }
+
+    to {
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.85);
+    }
+}
+
+@keyframes reg-button-animation {
+    from {
+        box-shadow: 0px 0px 0px 0px #ffffff;
+    }
+
+    75% {
+        box-shadow: 0px 0px 20px 0px rgb(234, 149, 255);
+    }
+
+    to {
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.85);
+    }
+}
+
+
+.headerRight {
+    justify-content: space-between;
+}
+
+.card {
+    border: 5px solid #f5f5f5;
+    padding: 30px;
+    width: 300px;
+    background: #ffffff;
+    border-radius: 35px;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    p {
+        font-size: 19px;
+        padding: 10px;
+        font-weight: bolder;
+    }
+
+    .price {
+        border: 3px solid #f5f5f5;
+        background: #ffffff;
+        margin-bottom: 30px;
+        color: #000000;
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0px 0px 20px 0px #f3f3f3;
+    }
+
+}
+
+.cardImage {
+    width: max-content;
+}
+
+.card:hover {
+    transform: scale(1.03) translateY(-3px);
+    transition: 0.5s;
+}
+
+.search-block {
+    margin-bottom: 20px;
+    border: 2px solid #f5f5f5;
+    border-radius: 20px;
+
+    input {
+        width: 1490px;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+}
+
+.cartItemImg {
+    width: 200px;
+    background-size: contain;
+    background-position: 0 -3px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+
+.cartItem {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    border: 2px solid #f5f5f5;
+    transform: scale(1.00);
+    transition: 0.5s;
+
+    p {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 16px;
+    }
+
+    b {
+        margin-left: 50px;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: flex;
+        font-size: 17px;
+    }
+
+    .removeBtn {
+        padding: 5px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+
+    .removeBtn:hover {
+        opacity: 1;
+        transition: 0.5s;
+    }
+}
+
+.cartItem:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+    box-shadow: 0px 5px 10px 0px #f6f6f6;
+}
+
+.cartTotalBlock {
+    justify-content: space-between;
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px #f3f3f3;
+    border: 2px solid #ffffff;
+    padding: 15px;
+    display: flex;
+    bottom: 0;
+    transition: 0.5s;
+
+    .orderButton {
+        width: 210px;
+        margin-left: 20px;
+        background: #3a40ff;
+        border-radius: 20px;
+        padding: 15px;
+        color: white;
+        animation: button-animation 3s forwards;
+        animation-iteration-count: infinite;
+    }
+
+
+    li {
+        text-align: center;
+        display: flex;
+    }
+
+    span {
+        margin-left: auto;
+    }
+
+    b {
+        margin-right: auto;
+        margin-left: 5px;
+    }
+
+    .cartTotalPrice {
+        width: 210px;
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 15px;
+        border: 2px solid #f5f5f5;
+    }
+
+}
+
+.cartTotalBlock:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+.userAndCardBlock {
+    margin-right: 30px;
+    width: 540px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #ffffff;
+    border-radius: 35px;
+    box-shadow: 0px 0px 30px 0px #f3f3f3;
+    border: 3px solid #f5f5f5;
+    padding: 15px;
+    display: flex;
+    transition: 1s;
+
+    li {
+        width: 100%;
+        text-align: center;
+    }
+
+    span {
+        margin: auto;
+    }
+
+    img {
+        margin-left: 10px;
+    }
+
+    .user {
+        width: 290px;
+        cursor: pointer;
+        height: 60px;
+        padding: 12px;
+        border-radius: 27px;
+        background: #ffffff;
+        border: 3px solid #f5f5f5;
+    }
+
+    .cart {
+        width: 290px;
+        margin-right: 9px;
+        color: white;
+        cursor: pointer;
+        height: 60px;
+        padding: 15px;
+        border-radius: 27px;
+        background: #880fd9;
+        animation: cart-animation 3s infinite;
+    }
+}
+
+.userAndCardBlock:hover {
+    transform: scale(1.03);
+    transition: 1s;
+}
+
+.GoHome {
+    margin-right: 30px;
+    width: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #ffffff;
+    border-radius: 35px;
+    box-shadow: 0px 0px 30px 0px #f3f3f3;
+    border: 3px solid #f5f5f5;
+    padding: 15px;
+    display: flex;
+    transition: 1s;
+
+    .home-button {
+        width: 290px;
+        cursor: pointer;
+        height: 60px;
+        padding: 12px;
+        border-radius: 27px;
+        background: #880fd9;
+        border: 3px solid #f5f5f5;
+    }
+
+    span {
+        color: white;
+        margin: auto;
+    }
+
+}
+
+.GoHome:hover {
+    transform: scale(1.03);
+    transition: 1s;
+}
+
+.registration {
+    margin: auto;
+    margin-top: 9%;
+    border: 5px solid #f5f5f5;
+    padding: 30px;
+    width: 600px;
+    background: #ffffff;
+    border-radius: 35px;
+    transition: 0.5s;
+    cursor: pointer;
+
+    input {
+        margin-top: 10px;
+        width: 530px;
+        border: 2px solid #f5f5f5;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+}
+
+.login {
+    margin: auto;
+    margin-top: 10%;
+    border: 5px solid #f5f5f5;
+    padding: 30px;
+    width: 600px;
+    background: #ffffff;
+    border-radius: 35px;
+    transition: 0.5s;
+    cursor: pointer;
+
+    textarea {
+        margin-top: 15px;
+        width: 530px;
+        border: 2px solid #f5f5f5;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    input {
+        margin-top: 15px;
+        width: 530px;
+        border: 2px solid #f5f5f5;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+}
+
+.reg-b-1 {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    background: #3a40ff;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    animation: button-animation 3s forwards;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.reg-b-1:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+.reg-b-2 {
+    margin-left: 10px;
+    margin-top: 20px;
+    background: #880fd9;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    animation: reg-button-animation 3s forwards;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.reg-b-2:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.reg-b-3 {
+    margin-top: 20px;
+    background: #ec5f5f;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.reg-b-3:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.exit-button {
+    width: 40%;
+    height: 30px;
+    background: #ec5f5f;
+    border-radius: 20px;
+    color: white;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.exit-button:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.login-button {
+    width: 60%;
+    padding: 5px;
+    background: #3a40ff;
+    border-radius: 20px;
+    color: white;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.login-button:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.order-form {
+    margin: auto;
+    margin-top: 9%;
+    border: 5px solid #f5f5f5;
+    padding: 30px;
+    width: 600px;
+    background: #ffffff;
+    border-radius: 35px;
+    transition: 0.5s;
+    cursor: pointer;
+
+    input {
+        margin-top: 15px;
+        width: 530px;
+        border: 2px solid #f5f5f5;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+}
+
+.cardButton {
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out; 
+}
+
+.cardButton:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.cardButton:active {
+    transform: scale(1);
+}
+
+.removeBtn {
+    
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.removeBtn:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.removeBtn:active {
+    transform: scale(1);
+}
+
+
+
+.conatct-button {
+    width: 100%;
+    background: #3a40ff;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 25px;
+    color: white;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.conatct-button:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.map-container {
+    transform: scale(0.9);
+    border: 5px solid #f5f5f5;
+    justify-content: space-between;
+    border-radius: 20px;
+    animation-iteration-count: infinite;
+}
