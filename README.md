@@ -57,7 +57,7 @@ Welcome to the **Music Planet Online Store** repository! This is a full-stack ap
       `username` varchar(255) NOT NULL
     );
 
-    CREATE TABLE `guitars` (
+    CREATE TABLE `items` (
       `id` int(11) NOT NULL,
       `title` varchar(255) NOT NULL,
       `price` int(11) DEFAULT NULL,
@@ -83,7 +83,7 @@ Welcome to the **Music Planet Online Store** repository! This is a full-stack ap
       `message` text NOT NULL
     );
 
-    CREATE TABLE `requests` (
+    CREATE TABLE `users` (
       `id` int(11) NOT NULL,
       `ip_address` varchar(45) NOT NULL,
       `username` varchar(255) NOT NULL,
