@@ -49,48 +49,8 @@ Welcome to the **Music Planet Online Store** repository! This is a full-stack ap
 1. **Create the necessary databases and tables:**
 
     ```sql
-    CREATE TABLE `cart` (
-      `id` int(11) NOT NULL,
-      `title` varchar(255) NOT NULL,
-      `price` decimal(10,2) NOT NULL,
-      `imageUrl` varchar(255) NOT NULL,
-      `username` varchar(255) NOT NULL
-    );
+![image](https://github.com/user-attachments/assets/95ef7bec-bcad-4864-8ddf-d18caed75c5a)
 
-    CREATE TABLE `items` (
-      `id` int(11) NOT NULL,
-      `title` varchar(255) NOT NULL,
-      `price` int(11) DEFAULT NULL,
-      `imageUrl` varchar(255) NOT NULL
-    );
-
-    CREATE TABLE `orders` (
-      `OrderID` int(11) NOT NULL,
-      `ProductName` varchar(255) DEFAULT NULL,
-      `FirstName` varchar(50) DEFAULT NULL,
-      `LastName` varchar(50) DEFAULT NULL,
-      `Address` varchar(255) DEFAULT NULL,
-      `Email` varchar(100) DEFAULT NULL,
-      `PhoneNumber` varchar(15) DEFAULT NULL,
-      `OrderStatus` varchar(50) DEFAULT NULL
-    );
-
-    CREATE TABLE `contacts` (
-      `id` int(11) NOT NULL,
-      `name` varchar(255) NOT NULL,
-      `last_name` varchar(255) NOT NULL,
-      `email` varchar(255) NOT NULL,
-      `message` text NOT NULL
-    );
-
-    CREATE TABLE `users` (
-      `id` int(11) NOT NULL,
-      `ip_address` varchar(45) NOT NULL,
-      `username` varchar(255) NOT NULL,
-      `password` varchar(255) NOT NULL,
-      `email` varchar(255) NOT NULL,
-      `request_time` timestamp NOT NULL DEFAULT current_timestamp()
-    );
     ```
 
 ## 🤝 Contributing
