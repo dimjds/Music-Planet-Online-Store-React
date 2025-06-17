@@ -49,7 +49,7 @@ const Contact = () => {
       <HeaderEmpty/>
       <form className='login' onSubmit={handleSubmit}>
         <div className="flex justify-between">
-          <h2 className="text-3xl font-bold">Вход</h2>
+          <h2 className="text-3xl font-bold">Обратная связь</h2>
           <div className='removeBtn'>
             <Link to="/home">
               <img className="mb-6" src="/img/btn-remove.svg" alt="remove" />
