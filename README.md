@@ -48,10 +48,8 @@ Welcome to the **Music Planet Online Store** repository! This is a full-stack ap
 ## 🗄️ Database Setup
 1. **Create the necessary databases and tables:**
 
-    ```sql
 ![image](https://github.com/user-attachments/assets/95ef7bec-bcad-4864-8ddf-d18caed75c5a)
 
-    ```
 
 ## 🤝 Contributing
 Contributions are welcome! Please fork this repository and submit a pull request for any changes.
